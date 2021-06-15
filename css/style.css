@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    margin-top: 1em;
+    width: 50%;
+
+}
+
+.btn-game {
+    font-size: xx-large;
+    padding: 1.5em;
+}
+
+
+
