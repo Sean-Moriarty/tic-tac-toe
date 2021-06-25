@@ -1,29 +1,52 @@
+
+var board = ["[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]"];
+
+gameBoard.addEventListener("load", refreshBoard());
+
 topLeftBtn.onclick = () => {
-    console.log("top left");
+    setPlayerButton(0);
 };
 topCenterBtn.onclick = () => {
-    console.log("top center");
+    setPlayerButton(1);
 };
 topRightBtn.onclick = () => {
-    console.log("top right");
+    setPlayerButton(2);
 };
 midLeftBtn.onclick = () => {
-    console.log("mid left");
+    setPlayerButton(3);
 };
 midCenterBtn.onclick = () => {
-    console.log("mid center");
+    setPlayerButton(4);
 };
 midRightBtn.onclick = () => {
-    console.log("mid right");
+    setPlayerButton(5);
 };
 bottomLeftBtn.onclick = () => {
-    console.log("bottom left");
+    setPlayerButton(6);
 };
 bottomCenterBtn.onclick = () => {
-    console.log("bottom center");
+    setPlayerButton(7);
 };
 bottomRightBtn.onclick = () => {
-    console.log("bottom right");
+    setPlayerButton(8);
 };
 
+function refreshBoard() {
+    topLeftBtn.innerHTML = board[0];
+    topCenterBtn.innerHTML = board[1];
+    topRightBtn.innerHTML = board[2];
+    midLeftBtn.innerHTML = board[3];
+    midCenterBtn.innerHTML = board[4];
+    midRightBtn.innerHTML = board[5];
+    bottomLeftBtn.innerHTML = board[6];
+    bottomCenterBtn.innerHTML = board[7];
+    bottomRightBtn.innerHTML = board[8];
+}
 
+function setPlayerButton(boardPosition) {
+    if (board[boardPosition] === "[-]") {
+        board[boardPosition] = "[X]";
+    }
+    
+    refreshBoard();
+}
