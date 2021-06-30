@@ -1,3 +1,7 @@
+// Game Board Display Layout:
+// [0][1][2]
+// [3][4][5]
+// [6][7][8]
 
 var board = ["[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]", "[-]"];
 
@@ -49,4 +53,18 @@ function setPlayerButton(boardPosition) {
     }
     
     refreshBoard();
+    
+    // This is only here for testing at this point 
+    setOpponentButton();
+}
+
+// I know this is broken at the moment until I implement actual game logic
+function setOpponentButton() {
+    var choice = Math.floor(Math.random() * 9);
+    if (board[choice] === "[X]" || board[choice] === "[O]") {
+        setOpponentButton();
+    } else {
+        board[choice] = "[O]";
+        refreshBoard();
+    }
 }
